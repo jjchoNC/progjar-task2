@@ -26,7 +26,7 @@ class ProcessTheClient(threading.Thread):
                 logging.warning(f"Received command from {self.address}: {command}")
 
                 if command == "TIME":
-                    now = time.strftime("%H:%M:%S", time.localtime())
+                    now = time.strftime("%d %m %Y %H:%M:%S", time.localtime())
                     response = f"JAM {now}\r\n"
                     self.connection.sendall(response.encode('utf-8'))
                 elif command == "QUIT":

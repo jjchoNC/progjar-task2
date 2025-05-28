@@ -3,7 +3,7 @@ import threading
 
 def run(client_id):
     try:
-        with socket.create_connection(('localhost', 45000)) as sock:
+        with socket.create_connection(('172.16.16.101', 45000)) as sock:
             sock.sendall(b"TIME\r\n")
             response = sock.recv(1024).decode()
             print(f"[Client {client_id}] Received: {response.strip()}")
